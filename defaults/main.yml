@@ -4,6 +4,10 @@ docker_edition: 'ce'
 docker_package: "docker-{{ docker_edition }}"
 docker_package_state: present
 
+# Daemon configuration options
+# TODO jinja templating
+
+
 # Service options.
 docker_service_state: started
 docker_service_enabled: true

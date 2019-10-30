@@ -21,6 +21,12 @@
     state: "{{ docker_service_state }}"
     enabled: "{{ docker_service_enabled }}"
 
+- name: configure Daemon
+  template:
+    src: daemon.json
+    dest: /etc/docker
+    backup: yes
+
 - name: Ensure handlers are notified now to avoid firewall conflicts.
   meta: flush_handlers
 
