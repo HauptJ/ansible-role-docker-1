@@ -23,9 +23,8 @@
 
 - name: configure Daemon
   template:
-    src: daemon.json
-    dest: /etc/docker
-    backup: yes
+    src: templates/daemon.json.j2
+    dest: /etc/docker/daemon.json
 
 - name: Ensure handlers are notified now to avoid firewall conflicts.
   meta: flush_handlers
